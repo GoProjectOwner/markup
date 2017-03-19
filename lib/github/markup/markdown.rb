@@ -4,6 +4,9 @@ module GitHub
   module Markup
     class Markdown < Implementation
       MARKDOWN_GEMS = {
+        "commonmarker" => proc { |content|
+          CommonMarker.render_html(content, :DEFAULT, [:tagfilter, :autolink, :table, :strikethrough])
+        },
         "github/markdown" => proc { |content|
           GitHub::Markdown.render(content)
         },
@@ -25,7 +28,7 @@ module GitHub
       }
 
       def initialize
-        super(/md|rmd|mkdn?|mdwn|mdown|markdown|litcoffee/i)
+        super([Linguist::Language["Markdown"], Linguist::Language["RMarkdown"], Linguist::Language["Literate CoffeeScript"]])
       end
 
       def load

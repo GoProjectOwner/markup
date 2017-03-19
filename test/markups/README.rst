@@ -31,6 +31,22 @@ The UTF-8 quote character in this table used to cause python to go boom. Now doc
 	Tabular Data, 5
 	Made up ratings, 11
 
+.. code::
+
+	A block of code
+
+.. code:: python
+
+	python.code('hooray')
+
+.. doctest:: ignored
+
+	>>> some_function()
+	'result'
+
+>>> some_function()
+'result'
+
 ==============  ==========================================================
 Travis          http://travis-ci.org/tony/pullv
 Docs            http://pullv.rtfd.org
@@ -59,3 +75,8 @@ Field list
 someone@somewhere.org
 
 Press :kbd:`Ctrl+C` to quit
+
+
+.. raw:: html
+
+    <p><strong>RAW HTML!</strong></p><style> p {color:blue;} </style>
